@@ -1,4 +1,4 @@
-This is Starter project for creating a basic performance test simulation using Gatling framework with Scala.
+This is a starter project for creating a basic performance test simulation using Gatling framework with Scala.
 The application under test is: 
 
 http://computer-database.gatling.io
