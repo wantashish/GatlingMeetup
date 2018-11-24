@@ -46,8 +46,11 @@ class SearchAndCreateComputer extends Simulation {
 			.check(status.is(200)))
 
 	setUp(scn.inject(
+//		This injection is for open workload system where there is no control on concurrent users in the system, only rate of user injection is controlled
 		rampUsersPerSec(0) to 10 during(2 minutes),
 		constantUsersPerSec(10) during(7 minutes),
 		rampUsersPerSec(10) to 0 during(1 minute)
+//		This injection is for closed worload system where users are not injected if number of concurrent users has hit the limit
+//			constantConcurrentUsers(10) during (7 minutes)
 	)).protocols(httpProtocol)
 }
